@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Hack:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -190,7 +190,7 @@ static MouseShortcut mshortcuts[] = {
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
-#define TERMMOD (ControlMask|ShiftMask)
+#define TERMMOD (ControlMask|Mod4Mask)
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -206,8 +206,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_k,           kscrollup,      {.i = -1} },
+	{ TERMMOD,              XK_j,           kscrolldown,    {.i = -1} },
 };
 
 /*
